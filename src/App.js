@@ -8,9 +8,6 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <div className="App">
@@ -21,8 +18,8 @@ class App extends Component {
         <p className="App-intro">
         {
           this.props.formPersist !== '' ?
-            <input type="text" placeholder="fill this redux & then refresh" onChange={event => this.props.persistForm(event.target.value)} value={this.props.formPersist} /> :
-            <input type="text" placeholder="fill this redux & then refresh" onChange={event => this.props.persistForm(event.target.value)} defaultValue={this.props.formPersist} />
+            <input type="text" value={this.props.formPersist} onChange={event => this.props.persistForm(event.target.value)} /> :
+            <input type="text" placeholder="fill this redux & then refresh" onChange={event => this.props.persistForm(event.target.value)} />
         }
         </p>
       </div>
